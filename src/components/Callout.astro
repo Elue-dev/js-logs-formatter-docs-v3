@@ -1,0 +1,19 @@
+---
+const { type = "note" } = Astro.props;
+
+type CalloutType = "note" | "warning" | "danger";
+
+const styleMap: Record<CalloutType, string> = {
+  note: "background-color: #e0f7fa; color: #00796b; padding: 1rem; border-radius: 8px;",
+  warning:
+    "background-color: #fff3cd; color: #856404; padding: 1rem; border-radius: 8px;",
+  danger:
+    "background-color: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px;",
+};
+
+const validType: CalloutType = type as CalloutType;
+---
+
+<div style={styleMap[validType]}>
+  <slot />
+</div>
