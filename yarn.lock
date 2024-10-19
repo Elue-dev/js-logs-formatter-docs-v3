@@ -578,6 +578,11 @@
   dependencies:
     "@expressive-code/core" "^0.35.6"
 
+"@fontsource-variable/raleway@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/raleway/-/raleway-5.1.0.tgz#d3a3e7886ac10feab6425f2798f62f5f9334ea52"
+  integrity sha512-TtV3e3ZLfGu6XmqRDvZ0Q4cXlRs4Rwbxsc+Te3yMtJKRQgNS/OBRtLjztb3cCrZWTPvH7bKKWjtBlC8yuZWWVw==
+
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
   resolved "https://registry.yarnpkg.com/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.5.tgz#ef5b5a07862805f1e8145a377c8ba6e98813ca08"
