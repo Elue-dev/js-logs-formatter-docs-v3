@@ -12,7 +12,7 @@ export default defineConfig({
       logo: {
         src: "./src/assets/logo.png",
       },
-      customCss: ["./src/styles/styles.css", "@fontsource-variable/raleway"],
+      customCss: ["./src/styles/styles.css", "@fontsource-variable/inter"],
       social: {
         github: "https://github.com/Elue-dev/js-logs-formatter",
       },

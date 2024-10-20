@@ -578,10 +578,25 @@
   dependencies:
     "@expressive-code/core" "^0.35.6"
 
+"@fontsource-variable/inter@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.1.0.tgz#8174c56d3a24ef20a7dd4ae3bb0c3df2ea1f5f70"
+  integrity sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==
+
+"@fontsource-variable/outfit@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/outfit/-/outfit-5.1.0.tgz#b289f3ca8b3b5cb95c81cadb129a019eef705f54"
+  integrity sha512-WUZiMehPerX/sUWC65Ku9hQ741cJtkCiy5T9XSZd1XbyYudNd/qoZSbUyEbiC00+4rGheNcKzaFdMGp5uonQog==
+
 "@fontsource-variable/raleway@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@fontsource-variable/raleway/-/raleway-5.1.0.tgz#d3a3e7886ac10feab6425f2798f62f5f9334ea52"
   integrity sha512-TtV3e3ZLfGu6XmqRDvZ0Q4cXlRs4Rwbxsc+Te3yMtJKRQgNS/OBRtLjztb3cCrZWTPvH7bKKWjtBlC8yuZWWVw==
+
+"@fontsource/ibm-plex-sans@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-5.1.0.tgz#9cd6bcce9817c55565ae2cf92629ce9a9f617a6b"
+  integrity sha512-v2aFHGh33ogG+At6dVNUCX6vWlNAhQ6STWj5WrBKPxVWX1SsAnHNq8sXQBa7WHEt29Irmozuk7GTp6GzFlpwdQ==
 
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
