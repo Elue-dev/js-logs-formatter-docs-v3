@@ -1,0 +1,102 @@
+---
+//@ts-nocheck
+import { Icon } from "astro-icon/components";
+---
+
+<starlight-menu-button>
+  <button
+    aria-expanded="false"
+    aria-label={Astro.locals.t("menuButton.accessibleLabel")}
+    aria-controls="starlight__sidebar"
+    class="sl-flex md:sl-hidden bg-transparent"
+  >
+    <Icon
+      name="menu-down"
+      class="text-black dark:text-white text-2xl"
+      id="menuIcon"
+    />
+  </button>
+
+  <script>
+    class StarlightMenuButton extends HTMLElement {
+      btn = this.querySelector("button")!;
+      icon = this.querySelector("#menuIcon")!;
+
+      constructor() {
+        super();
+        this.btn.addEventListener("click", () => this.toggleExpanded());
+
+        const parentNav = this.closest("nav");
+        if (parentNav) {
+          parentNav.addEventListener("keyup", (e) => this.closeOnEscape(e));
+        }
+      }
+
+      setExpanded(expanded: boolean) {
+        this.setAttribute("aria-expanded", String(expanded));
+        document.body.toggleAttribute("data-mobile-menu-expanded", expanded);
+
+        const iconName = expanded ? "menu-up" : "menu-down";
+        this.icon.setAttribute("name", iconName);
+      }
+
+      toggleExpanded() {
+        this.setExpanded(this.getAttribute("aria-expanded") !== "true");
+      }
+
+      closeOnEscape(e: KeyboardEvent) {
+        if (e.code === "Escape") {
+          this.setExpanded(false);
+          this.btn.focus();
+        }
+      }
+    }
+
+    customElements.define("starlight-menu-button", StarlightMenuButton);
+  </script>
+
+  <style>
+    button {
+      position: fixed;
+      top: calc((var(--sl-nav-height) - var(--sl-menu-button-size)) / 2);
+      inset-inline-end: var(--sl-nav-pad-x);
+      z-index: var(--sl-z-index-navbar);
+      border: 0;
+      border-radius: 50%;
+      width: var(--sl-menu-button-size);
+      height: var(--sl-menu-button-size);
+      padding: 0.2rem;
+      color: var(--sl-color-black);
+      cursor: pointer;
+    }
+
+    :global([data-theme="light"]) button {
+      background-color: transparent;
+      color: var(--sl-color-white);
+    }
+
+    :global([data-theme="light"]) [aria-expanded="true"] button {
+      background-color: transparent;
+    }
+  </style>
+
+  <style is:global>
+    [data-mobile-menu-expanded] {
+      overflow: hidden;
+    }
+
+    @media (min-width: 50rem) {
+      [data-mobile-menu-expanded] {
+        overflow: auto;
+      }
+    }
+
+    #menuIcon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    [aria-expanded="true"] #menuIcon {
+      transform: rotate(180deg);
+    }
+  </style>
+</starlight-menu-button>

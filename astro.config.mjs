@@ -2,6 +2,8 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import AutoImport from "astro-auto-import";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
@@ -51,10 +53,19 @@ export default defineConfig({
       expressiveCode: expressiveCodeOptions,
       components: {
         Pagination: "./src/starlight-overrides/Pagination.astro",
+        MobileMenuToggle: "./src/starlight-overrides/MobileMenuToggle.astro",
       },
       // @ts-ignore
       sidebar: SIDE_BAR_CONFIG,
     }),
+    sitemap(),
     tailwind(),
+    AutoImport({
+      imports: [
+        {
+          "starlight-package-managers": ["PackageManagers"],
+        },
+      ],
+    }),
   ],
 });

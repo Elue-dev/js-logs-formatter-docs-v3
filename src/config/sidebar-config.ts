@@ -13,7 +13,7 @@ export const SIDE_BAR_CONFIG = [
       {
         label: "Customising Log Outputs",
         slug: "docs/advanced-usage/customising-log-outputs",
-        badge: { text: "New", variant: "success" },
+        // badge: { text: "New", variant: "success" },
       },
       {
         label: "API Reference",

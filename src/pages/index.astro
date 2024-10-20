@@ -1,11 +1,42 @@
 ---
-
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Card } from "@astrojs/starlight/components";
 ---
 
-<div class="h-screen">
-  <h1 class="">Welcome to my docs</h1>
-  <p>Explore JS Logs formatter Docs</p>
-</div>
+<StarlightPage
+  frontmatter={{
+    title: "Welcome to JS Logs Formatter Docs",
+    template: "splash",
+    editUrl: false,
+  }}
+>
+  <a href="/docs/introduction">
+    <button class="bg-blue-500 text-white py-1 px-8 rounded-lg cursor-pointer"
+      >Docs</button
+    >
+  </a>
+  <div class="mt-6">
+    <p>
+      JS Logs formatter can be used in the following frameworks and also on the
+      browser if need be!
+    </p>
+
+    <Card title="">
+      <p class="font-bold text-4xl">Next.js</p>
+      Integrate in your React Native / Expo Project
+    </Card>
+
+    <Card title="">
+      <p class="font-bold text-4xl">React Native</p>
+      Integrate in your React Native / Expo Project
+    </Card>
+
+    <Card title="">
+      <p class="font-bold text-4xl">Node.js</p>
+      Integrate in your React Native / Expo Project
+    </Card>
+  </div>
+</StarlightPage>
 
 <style>
   * {
@@ -14,7 +45,3 @@
     box-sizing: border-box;
   }
 </style>
-
-<script>
-  window.location.href = "/docs/introduction";
-</script>

@@ -1,19 +1,22 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* --sl-font: "Arimo", sans-serif; */
-  --sl-font: "Inter", sans-serif;
+  --sl-font: "Arimo", sans-serif;
+  /* --sl-font: "Inter", sans-serif; */
 }
 
 html {
   scrollbar-color: auto auto;
 
   @apply bg-white dark:bg-black scroll-smooth;
+}
+
+body {
 }
 
 /* Dark mode colors. */
@@ -159,8 +162,8 @@ a {
   color: var(--sl-color-white);
 }
 
-.sl-badge .success .small {
-  color: white;
+.sl-badge .success {
+  color: white !important;
 }
 
 .sidebar-content .top-level li details ul li a:hover {
