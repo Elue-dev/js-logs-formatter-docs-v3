@@ -1,48 +1,59 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-
 import tailwind from "@astrojs/tailwind";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import { autolinkConfig } from "./plugins/rehype-autolink-config";
+import { rehypeExternalLinks } from "./plugins/rehype-external-links.mjs";
+import { rehypeTable } from "./plugins/rehype-table.mjs";
+import icon from "astro-icon";
+import { SIDE_BAR_CONFIG } from "./src/config/sidebar-config";
+
+const expressiveCodeOptions = {
+  themes: ["vitesse-dark", "vitesse-light"],
+  styleOverrides: {
+    borderRadius: "0.5rem",
+    frames: {
+      shadowColor: "none",
+      tooltipSuccessBackground: "black",
+      inlineButtonBorder: "transparent",
+    },
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
+  devToolbar: {
+    enabled: false,
+  },
+  markdown: {
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, autolinkConfig],
+      rehypeTable,
+      rehypeExternalLinks,
+    ],
+  },
   integrations: [
+    icon(),
     starlight({
       title: "JS Logs Formatter",
       logo: {
         src: "./src/assets/logo.png",
       },
+
       customCss: ["./src/styles/styles.css", "@fontsource-variable/inter"],
       social: {
         github: "https://github.com/Elue-dev/js-logs-formatter",
       },
-      sidebar: [
-        {
-          label: "Introduction",
-          slug: "docs/introduction",
-        },
-        {
-          label: "Basic Usage",
-          slug: "docs/basic-usage",
-        },
-        {
-          label: "Advanced Usage",
-          items: [
-            {
-              label: "Customising Log Outputs",
-              slug: "docs/advanced-usage/customising-log-outputs",
-            },
-            {
-              label: "API Reference",
-              slug: "docs/advanced-usage/api-reference",
-            },
-          ],
-        },
-        {
-          label: "Contributing",
-          slug: "docs/contributing",
-        },
-      ],
+      // @ts-ignore
+      expressiveCode: expressiveCodeOptions,
+      components: {
+        Pagination: "./src/starlight-overrides/Pagination.astro",
+      },
+      // @ts-ignore
+      sidebar: SIDE_BAR_CONFIG,
     }),
     tailwind(),
   ],

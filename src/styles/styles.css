@@ -8,6 +8,12 @@
   --sl-font: "Outfit", sans-serif;
 }
 
+html {
+  scrollbar-color: auto auto;
+
+  @apply bg-white dark:bg-black scroll-smooth;
+}
+
 /* Dark mode colors. */
 :root {
   --sl-color-accent-low: #fff;
@@ -19,8 +25,8 @@
   --sl-color-gray-3: #535456;
   --sl-color-gray-4: #494a4c;
   --sl-color-gray-5: #232323;
-  --sl-color-gray-6: #161616;
-  --sl-color-black: #111;
+  --sl-color-gray-6: #0d0d0d;
+  --sl-color-black: #000;
 }
 
 /* Light mode colors. */
@@ -37,4 +43,177 @@
   --sl-color-gray-6: #eceef2;
   --sl-color-gray-7: #f5f6f8;
   --sl-color-black: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.rehype-heading-wrapper .rehype-anchor-link {
+  margin-inline-start: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rehype-heading-wrapper:hover .rehype-anchor-link {
+  opacity: 1;
+}
+
+.rehype-anchor-link:focus {
+  opacity: 1;
+}
+
+.rehype-heading-wrapper:not(:first-child):is(
+    .rehype-level-h3,
+    .rehype-level-h4,
+    .rehype-level-h5
+  ) {
+  margin-block-start: 2em;
+}
+
+.rehype-heading-wrapper:not(:first-child):is(.rehype-level-h2):not(
+    .rehype-with-extra-margin
+  ) {
+  margin-block-start: 3.75em;
+}
+
+.rehype-heading-wrapper:not(:first-child):is(
+    .rehype-level-h3,
+    .rehype-level-h4,
+    .rehype-level-h5
+  ) {
+  margin-block-start: 2em;
+}
+
+.rehype-heading-wrapper:not(:first-child):is(.rehype-level-h2):not(
+    .rehype-with-extra-margin
+  ) {
+  margin-block-start: 3.75em;
+}
+
+#starlight__sidebar > div > ul > li > details > ul > li > details > ul > li {
+  @apply border-l-[1px] border-[#EBEBEB] dark:border-[#2B2B2B];
+}
+
+.sidebar-content
+  .top-level
+  li
+  details
+  ul
+  li
+  a[aria-current="page"]
+  span:is([data-theme="dark"] *) {
+  @apply dark:text-white;
+}
+
+.expressive-code .ec-line.mark,
+.expressive-code .ec-line.ins,
+.expressive-code .ec-line.del {
+  @apply bg-neutral-200 dark:bg-[#35353599] !important;
+}
+
+.expressive-code .ec-line.mark .code {
+  @apply border-2 border-neutral-600 !important;
+}
+
+.sidebar-content .top-level > li > details > summary {
+  padding: 0.625rem 0;
+}
+
+.sidebar-content .top-level > li > details > ul {
+  padding-inline-start: 0.875rem;
+  margin-block-end: 0.5rem;
+}
+
+.sidebar-content .top-level > li > details > ul > li > details > summary {
+  border-inline-start: 0;
+  margin-inline-start: 0;
+  padding: 0.5rem 0;
+}
+
+.sidebar-content .top-level li details ul li {
+  margin-inline: 0;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+  position: relative;
+  position: relative;
+}
+
+.sidebar-content .top-level li details ul li a {
+  padding-block: 0.6rem;
+  padding-inline-start: 0.75rem;
+  border-radius: 4px;
+}
+
+.sidebar-content .top-level li details ul li a span {
+  @apply text-[#4D4D4D] dark:text-[#C9C9C9] duration-300 transition;
+}
+
+.sidebar-content .top-level li details ul li a[aria-current="page"] span {
+  @apply text-white dark:text-black;
+}
+
+.sidebar-content .top-level li details ul li a:hover span {
+  color: var(--sl-color-white);
+}
+
+.sl-badge .success .small {
+  color: white;
+}
+
+.sidebar-content .top-level li details ul li a:hover {
+  @apply bg-blue-300 dark:bg-blue-950 transition duration-300;
+}
+
+.sidebar-content {
+  @apply bg-white dark:bg-black;
+}
+
+.sidebar-content {
+  padding-inline-start: var(--sl-nav-pad-x);
+}
+
+.sidebar-content
+  > .top-level
+  > li
+  > details
+  > summary
+  > div.group-label
+  > span {
+  font-size: 1rem;
+}
+
+.sidebar-content
+  > ul
+  > li
+  > details
+  > ul
+  > li
+  > details
+  > summary
+  > div.group-label
+  > span {
+  @apply text-sm text-[#2B2B2B] dark:text-[#EBEBEB] font-normal;
+}
+
+/* .sidebar-content .top-level li details ul li a[aria-current="page"] span {
+  color: var(--sl-color-white);
+  font-weight: 500;
+} */
+
+.sidebar-content > ul > li > details > ul > li > details > summary > svg {
+  color: #bbb;
+}
+
+.sidebar-content details > summary > svg {
+  transform: rotateZ(90deg);
+  transition: none;
+}
+
+.sidebar-content details[open] > summary > svg {
+  transform: rotateZ(270deg);
+}
+
+.right-sidebar-container {
+  width: var(--sl-sidebar-width);
 }

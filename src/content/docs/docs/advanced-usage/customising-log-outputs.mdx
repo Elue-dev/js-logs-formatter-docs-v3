@@ -4,7 +4,7 @@ description: "Customising the output logs"
 ---
 
 
-import Callout from '../../../../components/Callout.astro'
+import { Aside } from '@astrojs/starlight/components';
 
 
 To customise the logs, you can add a **helper text** to help you describe what kind of logs it is eg the type of data, as well as **colors** to style the logs according to your preferences, eg **red** for logging errors
@@ -71,9 +71,12 @@ This will print out the user data with a **green** color to the console and the 
   `}
 </pre>
 
-<Callout type="warning">
-  **_Note:_** Due to differences in how React Native handles stack traces, the accuracy of line numbers and function names can vary. While the `println` function captures file names and line numbers accurately in Node.js environments, in React Native, the stack trace format may include network-related information or different formatting, making line numbers less predictable. For best results, focus on the file name and function name when using this in a React Native environment.
-</Callout>
+<Aside type="caution" title="Note">
+  Due to differences in how React Native handles stack traces, the accuracy of line numbers and function names can vary. While the `println` function captures file names and line numbers accurately in Node.js environments, in React Native, the stack trace format may include network-related information or different formatting, making line numbers less predictable. For best results, focus on the file name and function name when using this in a React Native environment.
+</Aside>
+
+
+
 We can use the **red** colors (background colors included) to easily identify error logs:
 
 ```typescript {7}
