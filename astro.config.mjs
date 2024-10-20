@@ -49,9 +49,9 @@ export default defineConfig({
       },
       // @ts-ignore
       expressiveCode: expressiveCodeOptions,
-      components: {
-        Pagination: "./src/starlight-overrides/Pagination.astro",
-      },
+      // components: {
+      //   Pagination: "./src/starlight-overrides/Pagination.astro",
+      // },
       // @ts-ignore
       sidebar: SIDE_BAR_CONFIG,
     }),
