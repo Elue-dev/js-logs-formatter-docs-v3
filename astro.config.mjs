@@ -11,18 +11,7 @@ import { rehypeExternalLinks } from "./plugins/rehype-external-links.mjs";
 import { rehypeTable } from "./plugins/rehype-table.mjs";
 import icon from "astro-icon";
 import { SIDE_BAR_CONFIG } from "./src/config/sidebar-config";
-
-const expressiveCodeOptions = {
-  themes: ["vitesse-dark", "vitesse-light"],
-  styleOverrides: {
-    borderRadius: "0.5rem",
-    frames: {
-      shadowColor: "none",
-      tooltipSuccessBackground: "black",
-      inlineButtonBorder: "transparent",
-    },
-  },
-};
+import { EXPRESSIVE_CODE_OPTIONS } from "./src/config/expressive-code-options";
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,12 +34,12 @@ export default defineConfig({
         src: "./src/assets/logo.png",
       },
 
-      customCss: ["./src/styles/styles.css", "@fontsource-variable/inter"],
+      customCss: ["./src/styles/styles.css", "@fontsource-variable/Outfit"],
       social: {
         github: "https://github.com/Elue-dev/js-logs-formatter",
       },
       // @ts-ignore
-      expressiveCode: expressiveCodeOptions,
+      expressiveCode: EXPRESSIVE_CODE_OPTIONS,
       components: {
         Pagination: "./src/starlight-overrides/Pagination.astro",
         MobileMenuToggle: "./src/starlight-overrides/MobileMenuToggle.astro",
