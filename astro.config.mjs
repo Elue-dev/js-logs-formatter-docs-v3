@@ -31,13 +31,13 @@ export default defineConfig({
     icon(),
     starlight({
       title: "JS Logs Formatter",
-      plugins: [
-        starlightDocSearch({
-          appId: import.meta.env.VITE_ALGOLIA_APP_ID,
-          apiKey: import.meta.env.VITE_ALGOLIA_API_KEY,
-          indexName: import.meta.env.VITE_ALGOLIA_INDEX_ID,
-        }),
-      ],
+      // plugins: [
+      //   starlightDocSearch({
+      //     appId: import.meta.env.VITE_ALGOLIA_APP_ID,
+      //     apiKey: import.meta.env.VITE_ALGOLIA_API_KEY,
+      //     indexName: import.meta.env.VITE_ALGOLIA_INDEX_ID,
+      //   }),
+      // ],
       logo: {
         src: "./src/assets/logo.png",
       },
