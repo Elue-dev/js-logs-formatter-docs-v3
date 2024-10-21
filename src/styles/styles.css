@@ -30,7 +30,8 @@ body {
   --sl-color-gray-3: #535456;
   --sl-color-gray-4: #494a4c;
   --sl-color-gray-5: #232323;
-  --sl-color-gray-6: #080808;
+  /* --sl-color-gray-6: #080808; */
+  --sl-color-gray-6: #000;
   --sl-color-black: #000;
 }
 
