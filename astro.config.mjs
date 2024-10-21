@@ -33,9 +33,9 @@ export default defineConfig({
       title: "JS Logs Formatter",
       plugins: [
         starlightDocSearch({
-          appId: import.meta.env.ALGOLIA_APP_ID,
-          apiKey: import.meta.env.ALGOLIA_API_KEY,
-          indexName: import.meta.env.ALGOLIA_INDEX_ID,
+          appId: import.meta.env.VITE_ALGOLIA_APP_ID,
+          apiKey: import.meta.env.VITE_ALGOLIA_API_KEY,
+          indexName: import.meta.env.VITE_ALGOLIA_INDEX_ID,
         }),
       ],
       logo: {
