@@ -9,6 +9,7 @@ import rehypeSlug from "rehype-slug";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import { rehypeExternalLinks } from "./plugins/rehype-external-links.mjs";
 import { rehypeTable } from "./plugins/rehype-table.mjs";
+import starlightDocSearch from "@astrojs/starlight-docsearch";
 import icon from "astro-icon";
 import { SIDE_BAR_CONFIG } from "./src/config/sidebar-config";
 import { EXPRESSIVE_CODE_OPTIONS } from "./src/config/expressive-code-options";
@@ -30,10 +31,16 @@ export default defineConfig({
     icon(),
     starlight({
       title: "JS Logs Formatter",
+      plugins: [
+        starlightDocSearch({
+          appId: import.meta.env.ALGOLIA_APP_ID,
+          apiKey: import.meta.env.ALGOLIA_API_KEY,
+          indexName: import.meta.env.ALGOLIA_INDEX_ID,
+        }),
+      ],
       logo: {
         src: "./src/assets/logo.png",
       },
-
       customCss: ["./src/styles/styles.css"],
       social: {
         github: "https://github.com/Elue-dev/js-logs-formatter",
