@@ -34,7 +34,7 @@ export default defineConfig({
         src: "./src/assets/logo.png",
       },
 
-      customCss: ["./src/styles/styles.css", "@fontsource-variable/Outfit"],
+      customCss: ["./src/styles/styles.css"],
       social: {
         github: "https://github.com/Elue-dev/js-logs-formatter",
       },
