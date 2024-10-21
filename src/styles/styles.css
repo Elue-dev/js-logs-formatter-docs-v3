@@ -225,3 +225,11 @@ a {
 .right-sidebar-container {
   width: var(--sl-sidebar-width);
 }
+
+.DocSearch-Hit-title {
+  color: white !important;
+}
+
+.DocSearch-Hit-path {
+  color: white !important;
+}
