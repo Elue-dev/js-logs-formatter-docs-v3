@@ -3,6 +3,8 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"); */
 
+@import url("https://fonts.cdnfonts.com/css/roobert");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +12,8 @@
 :root {
   /* --sl-font: "Arimo", sans-serif; */
   /* --sl-font: "Inter", sans-serif; */
-  --sl-font: Roobert, sans-serif;
+  --sl-font: "Roobert", sans-serif;
+
   /* --sl-font: "Plus Jakarta Sans", sans-serif; */
 }
 
